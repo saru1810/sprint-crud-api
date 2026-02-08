@@ -34,15 +34,16 @@ public class EmployeeController {
     // UPDATE
     @PutMapping("/{id}")
     public ResponseEntity<String> updateEmployee(
-            @PathVariable int id,
+            @PathVariable Long id,
             @RequestParam String name) {
 
         return ResponseEntity.ok(service.updateEmployee(id, name));
     }
 
+
     // DELETE
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteEmployee(@PathVariable int id) {
+    public ResponseEntity<String> deleteEmployee(@PathVariable long id) {
         return ResponseEntity.ok(service.deleteEmployee(id));
     }
 }
